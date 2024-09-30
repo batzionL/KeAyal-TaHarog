@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- load bootstrap via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- load jquery via CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="/js/AddPatient.js"></script>
+</head>
+
+<body>
+    <div class="col-sm-6 col-sm-offset-3">
+        <!-- OUR FORM -->
+        <form id="idNewPatien" onsubmit="addPatient(event)">
+            <h1>הוספת לקוחה:</h1>
+
+            <!-- FIRST NAME -->
+            <div id="name-group" class="form-group">
+                <label for="name">שם פרטי</label>
+                <input type="text" class="form-control" name="FName" id="idFName" placeholder="שם פרטי" required>
+            </div>
+
+            <!-- LAST NAME -->
+            <div id="name-group" class="form-group">
+                <label for="name">שם משפחה</label>
+                <input type="text" class="form-control" name="idLName" id="idLName" placeholder="שם משפחה" required>
+            </div>
+
+            <!-- ID -->
+            <div id="name-group" class="form-group">
+                <label for="idPtnt">ת.ז.</label>
+                <input type="text" class="form-control" name="IdPatient" id="IdPatient" placeholder="ת.ז." required>
+            </div>
+
+            <!-- EMAIL -->
+            <div id="id-group" class="form-group">
+                <label for="email">כתובת מייל:</label>
+                <input type="email" class="form-control" name="emailId" id="emailId" placeholder="כתובת מייל" required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div id="name-group" class="form-group">
+                <label for="password">סיסמה</label>
+                <div style="position: relative;">
+                    <input type="password" class="form-control" name="pwdId" id="pwdId" required>
+                    <i class="far fa-eye" id="chbx_shw_pwd_id" onclick="showPassword()"
+                        style="position: absolute; top: 50%; transform: translateY(-50%); left: 10px; cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-success" ; style="align-items: center;">אישור</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

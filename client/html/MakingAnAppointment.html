@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Calendar - Mondays Only</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+    <style>
+        #calendar {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="calendar"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                editable: true,
+                selectable: true,
+                dateClick: function(info) {
+                    var clickedDate = new Date(info.dateStr);
+                    var dayOfWeek = clickedDate.getUTCDay(); // Sunday is 0, Monday is 1, etc.
+
+                    // Allow only Mondays (dayOfWeek == 1)
+                    if (dayOfWeek === 1) {
+                        var title = prompt('Enter event title:');
+                        if (title) {
+                            calendar.addEvent({
+                                title: title,
+                                start: info.dateStr,
+                                allDay: true
+                            });
+                        }
+                    } else {
+                        alert('You can only select Mondays!');
+                    }
+                },
+                dayCellClassNames: function(info) {
+                    var date = new Date(info.date);
+                    var dayOfWeek = date.getUTCDay();
+
+                    // Disable all days except Mondays (disable non-Mondays)
+                    if (dayOfWeek !== 0 ) {
+                        return ['disabled-day'];
+                    }
+                    return [];
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+
+    <style>
+        /* Add styles to disable non-Monday days */
+        .fc-daygrid-day.disabled-day {
+            background-color: #e51c1c;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    </style>
+</body>
+</html>

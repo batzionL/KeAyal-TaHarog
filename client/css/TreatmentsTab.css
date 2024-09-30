@@ -1,0 +1,29 @@
+    /* Style for dynamically created divs */
+    /* .dynamic-div { */
+        /* background-color: lightblue; */
+        /* margin: 10px; */
+        /* padding: 15px; */
+        /* border: 2px solid #000; */
+        /* border-radius: 5px; */
+        /* text-align: center; */
+    /* } */
+
+
+    .dynamic-div {
+        background-color: lightblue;
+        width: 250px;  /* Set smaller width */
+        height: auto; /* Set smaller height */
+        margin: 20px;
+        padding: 15px;
+        border: 2px solid #000;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* For smooth transition */
+    }
+    
+
+    /* Hover effect */
+    .dynamic-div:hover {
+        background-color: lightcoral;  /* Change background color on hover */
+        transform: scale(1.05); /* Slight zoom on hover */
+    }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- load bootstrap via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- load jquery via CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="css/Login.css" />
+    <script src="/js/Login.js"></script>
+</head>
+<!-- <center> -->
+
+<body>
+    <h1>ברוכות הבאות</h1>
+    <button id="btnOldPatient" onclick="OldPatient()">מטופלת ותיקה</button>
+    <button id="btnNewPatient">מטופלת חדשה</button>
+
+    <div id="divOfIdAndPsd" style="visibility: hidden;">
+        <div>
+            <label>הכניסי ת.ז.</label>
+            <input type="text" id="IdPatient" required>
+        </div>
+        <!-- PASSWORD -->
+        <div id="name-group" class="form-group">
+            <label for="password">הכניסי סיסמה</label>
+            <div style="position: relative;">
+                <input type="password"  name="pwdPatient" id="pwdPatient" required>
+                <i class="far fa-eye" id="chbx_shw_pwd_id" onclick="showPassword()"
+                    style="position: absolute; top: 50%; right: 11.5%; transform: translateY(-50%); left: 10px; cursor: pointer;"></i>
+            </div>
+        </div>
+        <!-- <label>הכניסי סיסמה</label> -->
+        <!-- <input type="password" id="pwdPatient" required> -->
+        <!-- <i class="far fa-eye" id="chbx_shw_pwd_id" onclick="showPassword()" -->
+        <!-- style="position: absolute; top: 50%; transform: translateY(-50%); left: 10px; cursor: pointer;"></i> -->
+    </div>
+
+    <button class="button login__submit" type="submit" onclick="getPatientUsername()">
+        <span class="button__text">כניסה</span>
+    </button>
+</body>
+<!-- </center> -->
+
+</html>

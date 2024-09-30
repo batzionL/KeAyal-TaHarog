@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Therap</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- load bootstrap via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- load jquery via CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="/js/addTherap.js"></script>
+</head>
+
+<body>
+    <div class="col-sm-6 col-sm-offset-3">
+        <!-- OUR FORM -->
+        <form id="idNewTherap" onsubmit="addTherap(event)">
+            <h1>הוספת טיפול:</h1>
+
+            <!-- NAME -->
+            <div id="name-group" class="form-group">
+                <label for="name">שם</label>
+                <input type="text" class="form-control" name="Name" id="idName" placeholder="שם" required>
+            </div>
+
+            <!-- MOTHER NAME  -->
+            <div id="name-group" class="form-group">
+                <label for="name">שם האימא</label>
+                <input type="text" class="form-control" name="idMomName" id="idMomName" placeholder="שם האימא" required>
+            </div>
+
+            <!-- AGE -->
+            <div id="name-group" class="form-group">
+                <label for="age">גיל</label>
+                <input type="text" class="form-control" name="IdAge" id="IdAge" placeholder="גיל" required>
+            </div>
+
+            <!-- DATE -->
+            <div id="id-group" class="form-group">
+                <label for="date"> תאריך:</label>
+                <input type="date" class="form-control" name="dateId" id="dateId" placeholder="תאריך" required>
+            </div>
+
+            <!-- PROBLEM -->
+            <div id="name-group" class="form-group">
+                <label for="problem">בעיה</label>
+                <input type="text" class="form-control" name="problemId" id="problemId" placeholder="בעיה" required>
+            </div>
+
+            <!-- THERAP PROCESS -->
+            <div id="name-group" class="form-group">
+                <label for="therapProc">תהליך טיפולי</label>
+                <input type="text" class="form-control" name="therapProcId" id="therapProcId" placeholder="תהליך טיפולי" required>
+            </div>
+
+            <!-- HOME EXERCISES -->
+            <div id="name-group" class="form-group">
+                <label for="exercises">תרגילי בית</label>
+                <input type="text" class="form-control" name="homeEx" id="homeExId" placeholder="תרגילי בית" required>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-success" ; style="align-items: center;">אישור</button>
+            </div>
+        </form>
+        <!-- <button onclick="openPopup()"></button> -->
+    </div>
+</body>
+
+</html>
